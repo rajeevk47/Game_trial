@@ -34,7 +34,7 @@ collisionsMap.forEach((row, i) => {
 //==========Loading inmages=========//
 
 const image = new Image()
-image.src = './img/ok.png'
+image.src = './img/background.png'
 const playerdownImage = new Image()
 playerdownImage.src = './img/playerDown.png'
 const Foreground = new Image()
