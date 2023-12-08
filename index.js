@@ -94,8 +94,8 @@ const movableitems = [background,...boundaries,foreground] //  "..." represents 
 
 let touchup,touchdown,touchleft,touchright
 
-canvas.addEventListener("touchstart", ontouch);
-canvas.addEventListener("touchend", offtouch);
+canvas.addEventListener("mousedown", ontouch);
+canvas.addEventListener("mouseup", offtouch);
 
 function animate() {
     requestAnimationFrame(animate)

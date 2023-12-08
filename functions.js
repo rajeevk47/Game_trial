@@ -8,20 +8,18 @@ function rectangularcollision({rectangle1,rectangle2}){
 }
 function offtouch(){
     touchdown=false
-    touchup=false
+    touchup= false
     touchleft=false
     touchright=false
 }
 function ontouch(event){
-    var x = event.touches[0].clientX;
-    var y = event.touches[0].clientY;
-    if(player.position.x+2*player.width <x && player.position.x+3*player.width>x){
-        if(player.position.y+1.3*player.height>y){touchup=true}
-        else if(player.position.y+2.5*player.height<y){touchdown=true}
+    if(player.position.x+2*player.width <event.clientX && player.position.x+3*player.width>event.clientX){
+        if(player.position.y+1.3*player.height>event.clientY){touchup=true}
+        else if(player.position.y+2.5*player.height<event.clientY){touchdown=true}
     }
-    if(player.position.y+1.3*player.height<y&&player.position.y+2.5*player.height>y){
-        if(player.position.x+2*player.width >x){touchleft=true}
-        else if(player.position.x+3*player.width<x){touchright=true}
+    if(player.position.y+1.3*player.height<event.clientY&&player.position.y+2.5*player.height>event.clientY){
+        if(player.position.x+2*player.width >event.clientX){touchleft=true}
+        else if(player.position.x+3*player.width<event.clientX){touchright=true}
     }
 
 }
