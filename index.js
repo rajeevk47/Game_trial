@@ -92,9 +92,13 @@ const keys = {
 
 const movableitems = [background,...boundaries,foreground] //  "..." represents every elements in that array
 
+let touchup,touchdown,touchleft,touchright
+
+canvas.addEventListener("mousedown", ontouch);
+canvas.addEventListener("mouseup", offtouch);
 
 function animate() {
-    window.requestAnimationFrame(animate)
+    requestAnimationFrame(animate)
     background.draw()
     // boundaries.forEach(boundary => {boundary.draw()})  //can we used to locate barrier blocks
     player.draw()
@@ -103,8 +107,9 @@ function animate() {
     let moving = true
     player.moving =false
 
+    
 
-    if (keys.w.pressed) {
+    if (keys.w.pressed || touchup===true) {
         player.moving = true
         player.image = player.sprites.up
         for(let i=0 ;i <boundaries.length;i++){
@@ -123,7 +128,7 @@ function animate() {
             movable.position.y+=5
         })}
     }
-    else if (keys.s.pressed) {
+    else if (keys.s.pressed || touchdown) {
         player.moving=true
         player.image = player.sprites.down
         for(let i=0 ;i <boundaries.length;i++){
@@ -144,7 +149,7 @@ function animate() {
             movable.position.y-=5
         })}
     }
-    else if (keys.a.pressed) {
+    else if (keys.a.pressed|| touchleft===true) {
         player.moving=true
         player.image = player.sprites.left
         for(let i=0 ;i <boundaries.length;i++){
@@ -165,7 +170,7 @@ function animate() {
             movable.position.x+=5
         })}
     }
-    else if (keys.d.pressed) {
+    else if (keys.d.pressed|| touchright===true) {
         player.moving=true
         player.image=player.sprites.right
         for(let i=0 ;i <boundaries.length;i++){
@@ -186,10 +191,12 @@ function animate() {
             movable.position.x-=5
         })}
     }
-
+    
+    
 }
 
 animate()
+
 window.addEventListener('keydown', (e) => {
     // e= event
     switch (e.key.toLowerCase()) {
