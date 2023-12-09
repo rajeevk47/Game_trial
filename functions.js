@@ -26,7 +26,7 @@ function touchmove(e){
             else{touchleft=true}
         }
         else{
-            if(deltay>0){
+            if(deltay<0){
                 touchup=true
             }
             else{touchdown=true}
