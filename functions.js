@@ -13,17 +13,27 @@ function touchstart(e){
     touchstarty = e.touches[0].clientY
 }
 
+function touchend(){
+    touchdown=false
+    touchup= false
+    touchleft=false
+    touchright=false
+}
 function touchmove(e){
     var touchEndX = e.touches[0].clientX
     var touchEndY = e.touches[0].clientY
     var deltax =   touchEndX - touchstartx
     var deltay = touchEndY-touchstarty
     
-        if(Math.abs(deltax)>Math.abs(deltay)){
+        if(Math.abs(deltax)>=Math.abs(deltay)){
             if(deltax>0){
                 touchright=true
             }
             else{touchleft=true}
+        }
+        else if(deltax===0&&deltay===0){
+            touchend()
+
         }
         else{
             if(deltay<0){
@@ -35,13 +45,6 @@ function touchmove(e){
     touchstarty=touchEndY
 }
 
-
-function touchend(){
-    touchdown=false
-    touchup= false
-    touchleft=false
-    touchright=false
-}
 // function ontouch(event){
 //     if(player.position.x+2*player.width <event.clientX && player.position.x+3*player.width>event.clientX){
 //         if(player.position.y+1.3*player.height>event.clientY){touchup=true}
