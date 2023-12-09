@@ -33,7 +33,6 @@ function touchmove(e){
         }
     touchstartx=touchEndX
     touchstarty=touchEndY
-
 }
 
 
