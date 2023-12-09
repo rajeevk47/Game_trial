@@ -96,6 +96,7 @@ let touchup,touchdown,touchleft,touchright
 
 window.addEventListener('touchstart',touchstart)
 window.addEventListener('touchmove', touchmove);
+window.addEventListener('touchend',touchend)
 
 function animate(){
     requestAnimationFrame(animate)

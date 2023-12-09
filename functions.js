@@ -38,12 +38,12 @@ function touchmove(e){
 }
 
 
-// function offtouch(){
-//     touchdown=false
-//     touchup= false
-//     touchleft=false
-//     touchright=false
-// }
+function touchend(){
+    touchdown=false
+    touchup= false
+    touchleft=false
+    touchright=false
+}
 // function ontouch(event){
 //     if(player.position.x+2*player.width <event.clientX && player.position.x+3*player.width>event.clientX){
 //         if(player.position.y+1.3*player.height>event.clientY){touchup=true}
