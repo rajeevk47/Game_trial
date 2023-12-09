@@ -94,10 +94,10 @@ const movableitems = [background,...boundaries,foreground] //  "..." represents 
 
 let touchup,touchdown,touchleft,touchright
 
-canvas.addEventListener("mousedown", ontouch);
-canvas.addEventListener("mouseup", offtouch);
+window.addEventListener('touchstart',touchstart)
+window.addEventListener('touchmove', touchmove);
 
-function animate() {
+function animate(){
     requestAnimationFrame(animate)
     background.draw()
     // boundaries.forEach(boundary => {boundary.draw()})  //can we used to locate barrier blocks
