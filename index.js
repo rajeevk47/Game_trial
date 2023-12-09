@@ -95,7 +95,7 @@ const movableitems = [background,...boundaries,foreground] //  "..." represents 
 let touchup,touchdown,touchleft,touchright
 
 window.addEventListener('touchstart',touchstart)
-window.addEventListener('touchmove', touchmove);
+window.addEventListener('touchmove', touchmove)
 window.addEventListener('touchend',touchend)
 
 function animate(){
