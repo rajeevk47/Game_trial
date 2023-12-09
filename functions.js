@@ -7,6 +7,43 @@ function rectangularcollision({rectangle1,rectangle2}){
     )
 }
 
+function checkkeydown(e){
+        // e= event
+    switch (e.key.toLowerCase()) {
+        case 'w':
+            keys.w.pressed = true
+            break
+        case 'a':
+            keys.a.pressed = true
+            break
+        case 's':
+            keys.s.pressed = true
+            break
+        case 'd':
+            keys.d.pressed = true
+            break
+    }
+    
+}
+
+function checkkeyup(e){
+    switch (e.key.toLowerCase()) {
+        case 'w':
+            keys.w.pressed = false
+            break
+        case 'a':
+            keys.a.pressed = false
+            break
+        case 's':
+            keys.s.pressed = false
+            break
+        case 'd':
+            keys.d.pressed = false
+            break
+    }
+}
+
+
 var touchstartx,touchstarty
 function touchstart(e){
     touchstartx = e.touches[0].clientX
@@ -48,28 +85,3 @@ function touchmove(e){
     }
 
 }
-// function touchmove(e){
-//     var touchEndX = e.touches[0].clientX
-//     var touchEndY = e.touches[0].clientY
-//     var deltax =   touchEndX - touchstartx
-//     var deltay = touchEndY-touchstarty
-    
-//         if(Math.abs(deltax)>Math.abs(deltay)){
-//             if(deltax>0){
-//                 touchright=true
-//             }
-//             else{touchleft=true}
-//         }
-//         else if(Math.abs(deltax)<Math.abs(deltay)){
-//             if(deltay<0){
-//                 touchup=true
-//             }
-//             else{touchdown=true}
-//         }
-//         else{
-//             touchend()
-
-//         }
-//     touchstartx=touchEndX
-//     touchstarty=touchEndY
-// }

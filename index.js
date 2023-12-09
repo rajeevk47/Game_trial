@@ -198,43 +198,8 @@ function animate(){
 
 animate()
 
-window.addEventListener('keydown', (e) => {
-    // e= event
-    switch (e.key.toLowerCase()) {
-        case 'w':
-            keys.w.pressed = true
-            break
-        case 'a':
-            keys.a.pressed = true
-            break
-        case 's':
-            keys.s.pressed = true
-            break
-        case 'd':
-            keys.d.pressed = true
-            break
-    }
-}
-)
-
-window.addEventListener('keyup', (e) => {
-    // e= event
-    switch (e.key.toLowerCase()) {
-        case 'w':
-            keys.w.pressed = false
-            break
-        case 'a':
-            keys.a.pressed = false
-            break
-        case 's':
-            keys.s.pressed = false
-            break
-        case 'd':
-            keys.d.pressed = false
-            break
-    }
-}
-)
+window.addEventListener('keydown', checkkeydown)
+window.addEventListener('keyup',checkkeyup)
 
 
 
