@@ -31,8 +31,8 @@ function touchmove(e){
             }
             else{touchdown=true}
         }
-    touchstartx=touchEndX
-    touchstarty=touchEndY
+    // touchstartx=touchEndX
+    // touchstarty=touchEndY
     
 
 }
